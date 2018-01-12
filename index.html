@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hang-Man App</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+</script>
+<script src="app.js"></script>
+</head>
+<body ng-app="hangmanApp" ng-controller="gameController">
+
+      <div>
+          <div>
+              Guesses Left:{{guesses}}
+          </div>
+          <div>
+              your correct guesses:
+              <span ng-repeat="letter in correctGuesseChosen">
+                {{letter}}
+              </span>
+          </div>
+          <div>
+                your incorrect guesses:
+                <span ng-repeat="letter in incorrectGuessesChosen">
+                  {{letter}}
+                </span>
+          </div>
+
+          <div>You have to guess {{displayWord}}</div>
+
+          <div>
+              <input type="text" name="guess" ng-model="input.letter">
+              <button ng-click="letterChoosen()">Submit</button>
+          </div>
+
+
+      </div>
+
+</body>
+</html>
